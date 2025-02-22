@@ -11,7 +11,7 @@ export default function Teacher() {
 
     return (
         <div className="teacher">
-            <p> {teacherRole}  |  {teacher.teacherFirstName}  |  {teacher.teacherLastName}  |  {teacher.teacherInfo}</p>
+            <p> {teacher.teacherRole}  |  {teacher.teacherFirstName}  |  {teacher.teacherLastName}  |  {teacher.teacherInfo}</p>
             <button>Edit</button>
             <button>Delete</button>
 

@@ -2,7 +2,7 @@ export default function Child() {
 
     const child = {
         childName: "Ava Johnson",
-        childDOB: new Date("2020-12-05"),
+        childDOB: "2020-12-05",
         attendTime: "full",
         parentName: "Liam Johnson",
         parentPhone: 1987654321,

@@ -1,3 +1,6 @@
+import Child from "./Child";
+import Teacher from "./Teacher";
+
 export default function Group() {
     // const GroupSchema = new mongoose.Schema({
     //     group: {
@@ -32,9 +35,9 @@ export default function Group() {
            <button>Edit</button>
            <button>Delete</button>
            <p>Teachers:</p>
-           <p>{Group.teachers}</p>
+           <Teacher/>
            <p>Children:</p>
-           <p>{Group.kids}</p>
+           <Child/>
 
 
         </>
