@@ -5,11 +5,13 @@ import SchedulePage from './pages/SchedulePage'
 import ContactsPage from './pages/ContactsPage'
 import AdminPage from './pages/AdminPage'
 import './App.css'
+import NavBar from './components/NavBar'
 
 export default function App() { 
 
   return (
     <>
+      <NavBar />
       <Routes>
         <Route path='/' element={ <HomePage /> } />
         <Route path='/programms' element={<ProgrammsPage />} />
