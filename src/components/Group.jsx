@@ -1,9 +1,10 @@
 import axios from "axios";
+import { useState } from "react";
 import Child from "./Child";
 import Teacher from "./Teacher";
 
 export default function Group({ group, setCurrent }) {
-
+   
 
 
     console.log(group);
@@ -28,7 +29,7 @@ export default function Group({ group, setCurrent }) {
 
     return (
         <>
-            <h3>Group {group.group}       Max group size: {group.kidsInGroup} </h3>
+            <h3>Group: {group.group}       Max group size: {group.kidsInGroup} </h3>
             <button>Edit</button>
             <button onClick={handleDelete}>Delete</button>
             <p>Teachers:  <button>Add new</button></p>
