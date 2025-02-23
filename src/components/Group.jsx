@@ -1,9 +1,13 @@
+import { useState } from "react";
 import Child from "./Child";
 import Teacher from "./Teacher";
 
-export default function Group( {group} ) {
+export default function Group( {group, setCurrent} ) {
+   
+   
     
-    console.log(group);
+    console.log(group); 
+    // setCurrent(group);
 
     const teachers = group.teachers;
     console.log('Teachers');
@@ -20,10 +24,10 @@ export default function Group( {group} ) {
            <button>Delete</button>
            <p>Teachers:</p>
            { teachers.map((teacher, index) => {
-            return <Teacher key={index} teacher={teacher}/>})}
+            return <Teacher key={index} group_id={group._id} teacher={teacher} setCurrent={setCurrent}/>})}
            <p>Children:</p>
            { kids.map((kid, index) => {
-            return <Child key={index} child={kid}/>})}        
+            return <Child key={index} group_id={group._id} child={kid} setCurrent={setCurrent}/>})}        
 
 
         </>

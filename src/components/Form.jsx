@@ -6,7 +6,7 @@ import Group from "./Group";
 function Form() {
 
     const [groups, setGroups] = useState([]);
-
+    const [current, setCurrent] = useState();
     async function getData() {
         const result = await axios.get('http://localhost:3000/groups');
         console.log(result.data);             
@@ -21,7 +21,7 @@ function Form() {
         } catch (err) {
             console.error(err)
         }        
-    }, []);
+    }, [current]);
 
 
 
@@ -32,7 +32,7 @@ function Form() {
             <button>Teachers Management</button>
             <button>Kids Management</button>       
             { groups.map((group, index) => {
-                return <Group key={index} group={group} />
+                return <Group key={index} group={group} setCurrent={setCurrent}/>
                 })} 
             
 

@@ -1,4 +1,6 @@
-export default function Child({child}) {
+import axios from 'axios';
+
+export default function Child({group_id, child, setCurrent}) {
 
     // const child = {
     //     childName: "Ava Johnson",
@@ -8,6 +10,20 @@ export default function Child({child}) {
     //     parentPhone: 1987654321,
     //     parentEmail: "liam.johnson@example.com"
     // }
+
+    async function handleDelete() {
+        // router.patch('/:id/kids/:kidId'
+        console.log("TRY to Delete "+child._id+" "+child.childName+ " from "+group_id);
+        console.log(`DELETE request to: http://localhost:3000/groups/${group_id}/kids/${child._id}`);
+
+
+       const result = await axios.delete(`http://localhost:3000/groups/${group_id}/kids/${child._id}`, null); 
+console.log(result.data); 
+        
+        setCurrent(result.data);        
+        // window.location.reload();
+    }    
+
 
 
 
@@ -20,7 +36,7 @@ export default function Child({child}) {
                 {child.parentPhone}  |  
                 {child.parentEmail}  |
             <button>Edit</button> | 
-            <button>Delete</button>
+            <button onClick={handleDelete}>Delete</button>
             </p>
         </div>
     );
