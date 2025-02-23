@@ -16,7 +16,13 @@ export default function Group({ group, setCurrent }) {
     console.log("Kids")
     console.log(kids)
 
-    
+    async function handleDelete() {
+        console.log("TRY to Delete " + group._id);
+        const result = await axios.delete(`http://localhost:3000/groups/${group._id}`);
+        console.log(result.data);
+        setCurrent(result.data);
+
+    }
 
 
 
