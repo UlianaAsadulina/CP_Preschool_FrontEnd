@@ -1,43 +1,29 @@
 import Child from "./Child";
 import Teacher from "./Teacher";
 
-export default function Group() {
-    // const GroupSchema = new mongoose.Schema({
-    //     group: {
-    //         type: String,        
-    //         enum: [
-    //             "Infants (6wks-12months)",
-    //             "Infants (12wks-18months)",
-    //             "Toddlers (18m-30m)",
-    //             "Toddlers (30m-3yrs)",
-    //             "Preschool (3yrs-4yrs)",
-    //             "Preschool (4yrs-5yrs)",
-    //         ],
-    //         default: "Preschool (4yrs-5yrs)",
-    //         message: "${VALUE} is not valid group/age name",
-    //         required: true,
-    //     }, 
-    //     kidsInGroup: {
-    //         type: Number,
-    //         enum: [10, 12, 14, 16, 24, 28],
-    //         default: 28,
-    //         required: true,
-    //         message: "Value must corresponds Section 5104.033 | Staff to child ratios" },
-    //     teachers: [ teacherSchema ],
-    //     kids: [childSchema],
-      
-    // });
+export default function Group( {group} ) {
+    
+    console.log(group);
+
+    const teachers = group.teachers;
+    console.log('Teachers');
+    console.log(teachers)
+    const kids = group.kids;
+    console.log("Kids")
+    console.log(kids)
 
 
     return (
         <>
-           <h3>Group {Group.group}       Max group size: {Group.kidsInGroup} </h3> 
+           <h3>Group {group.group}       Max group size: {group.kidsInGroup} </h3> 
            <button>Edit</button>
            <button>Delete</button>
            <p>Teachers:</p>
-           <Teacher/>
+           { teachers.map((teacher, index) => {
+            return <Teacher key={index} teacher={teacher}/>})}
            <p>Children:</p>
-           <Child/>
+           { kids.map((kid, index) => {
+            return <Child key={index} child={kid}/>})}        
 
 
         </>
