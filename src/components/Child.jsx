@@ -14,10 +14,10 @@ export default function Child({group_id, child, setCurrent}) {
     async function handleDelete() {
         // router.patch('/:id/kids/:kidId'
         console.log("TRY to Delete "+child._id+" "+child.childName+ " from "+group_id);
-        console.log(`DELETE request to: http://localhost:3000/groups/${group_id}/kids/${child._id}`);
+       
 
 
-       const result = await axios.delete(`http://localhost:3000/groups/${group_id}/kids/${child._id}`, null); 
+       const result = await axios.delete(`http://localhost:3000/groups/${group_id}/kids/${child._id}`); 
 console.log(result.data); 
         
         setCurrent(result.data);        
