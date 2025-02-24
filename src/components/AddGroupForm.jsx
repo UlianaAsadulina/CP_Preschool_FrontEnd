@@ -22,8 +22,7 @@ export default function AddGroupForm({ setShowForm }) {
         try {
             let result = await axios.post('http://localhost:3000/groups', formData);
             setShowForm(false); // Hide the form after submission
-        } catch (err) {
-            window.alert(err);
+        } catch (err) {            
             console.error(err);
         }
     }

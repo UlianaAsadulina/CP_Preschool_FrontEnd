@@ -1,31 +1,52 @@
 import { useState } from "react";
+import axios from "axios";
 
 
-export default function AddTeacherForm({ setShowTeacherForm }) {
-    const [groupName, setGroupName] = useState()
-    const [max, setMax] = useState()
-   
+export default function AddTeacherForm({ group_id, setCurrent, setShowTeacherForm }) {
 
-    function nameChange(e) {
-        setGroupName(e.target.value);
-        
+    const [formData, setFormData] = useState({});
+
+
+    function handleChange(e) {
+        setFormData({ ...formData, [e.target.name]: e.target.value });
+
     }
 
-    function maxChange(e) {
-        setMax(e.target.value);}
-        
 
 
-    function handleSubmit(e) {
+    async function handleSubmit(e) {
         e.preventDefault();
-        setShowTeacherForm(false);
-    }
+        try {
+            let result = await axios.post(`http://localhost:3000/groups/${group_id}/teachers`, formData);
+            setCurrent(result);
+            setShowTeacherForm(false);
+
+        } catch (err) {
+            console.error(err);
+        }
+
+    };
+
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="firstName"> Name:
-                <input type="text" name="firstName" onChange={nameChange} />
-            </label>
-            
+            <label htmlFor="teacherRole"> Position:   </label>
+            <select name="teacherRole" defaultValue="Lead" onChange={handleChange}>
+                <option value="Lead">Lead</option>
+                <option value="Aid">Aid</option>
+            </select>
+
+            <label htmlFor="teacherFirstName"> First name:
+                <input type="text" name="teacherFirstName" onChange={handleChange} />
+            </label> 
+
+            <label htmlFor="teacherLastName"> Last name:
+                <input type="text" name="teacherLastName" onChange={handleChange} />
+            </label><br />
+
+            <label htmlFor="teacherInfo"> Information:  </label> <br />
+            <textarea name="teacherInfo" onChange={handleChange}></textarea>
+
+            <br />
             <button type="submit">Submit</button>
             <button type="button" onClick={() => setShowTeacherForm(false)}>Cancel</button>
 

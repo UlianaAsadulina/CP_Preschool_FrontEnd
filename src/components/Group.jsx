@@ -3,10 +3,12 @@ import { useState } from "react";
 import Child from "./Child";
 import Teacher from "./Teacher";
 import AddTeacherForm from "./AddTeacherForm";
+import AddChildForm from "./AddChildForm";
 
 export default function Group({ group, setCurrent }) {
 
     const [showTeacherForm, setShowTeacherForm] = useState(false);
+    const [showChildForm, setShowChildForm] = useState(false);
    
 
 
@@ -36,12 +38,14 @@ export default function Group({ group, setCurrent }) {
             <button>Edit</button>
             <button onClick={handleDelete}>Delete</button>
             <p>Teachers:  <button onClick={() => setShowTeacherForm(true)}>Add new</button></p>
-             {/* Show the AddTeacher form above all teachers when "Add new" button is clicked */}
-             {showTeacherForm && (<AddTeacherForm setShowTeacherForm={setShowTeacherForm} />)}
+            
+            {showTeacherForm && (<AddTeacherForm group_id={group._id} setShowTeacherForm={setShowTeacherForm} setCurrent={setCurrent} />)}
+
             {teachers.map((teacher, index) => {
                 return <Teacher key={index} group_id={group._id} teacher={teacher} setCurrent={setCurrent} />
             })}
-            <p>Children:  <button>Add new</button></p>
+            <p>Children:  <button onClick={() => setShowChildForm(true)}>Add new</button></p>
+            {showChildForm && (<AddChildForm group_id={group._id} setShowChildForm={setShowChildForm} setCurrent={setCurrent}/>)}
             {kids.map((kid, index) => {
                 return <Child key={index} group_id={group._id} child={kid} setCurrent={setCurrent} />
             })}
