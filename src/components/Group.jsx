@@ -1,11 +1,15 @@
 import axios from "axios";
 import { useState } from "react";
-import Child from "./Child";
+import { useNavigate } from "react-router-dom";
 import Teacher from "./Teacher";
+import Child from "./Child";
 import AddTeacherForm from "./AddTeacherForm";
 import AddChildForm from "./AddChildForm";
 
+
 export default function Group({ group, setCurrent }) {
+
+    const nav=useNavigate();
 
     const [showTeacherForm, setShowTeacherForm] = useState(false);
     const [showChildForm, setShowChildForm] = useState(false);
@@ -30,12 +34,19 @@ export default function Group({ group, setCurrent }) {
 
     }
 
+    function handleEdit() {
+        setCurrent(group);
+        nav(`/admin/update/${group.group_id}`);
+
+
+    }
+
 
 
     return (
         <>
             <h3>Group: {group.group}       Max group size: {group.kidsInGroup} </h3>
-            <button>Edit</button>
+            <button onClick={handleEdit}>Edit</button>
             <button onClick={handleDelete}>Delete</button>
             <p>Teachers:  <button onClick={() => setShowTeacherForm(true)}>Add new</button></p>
             

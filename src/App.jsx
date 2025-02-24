@@ -1,11 +1,13 @@
-import { Route, Routes } from 'react-router-dom'
-import HomePage from './pages/HomePage'
-import ProgrammsPage from './pages/ProgrammsPage'
-import SchedulePage from './pages/SchedulePage'
-import ContactsPage from './pages/ContactsPage'
-import AdminPage from './pages/AdminPage'
-import './App.css'
-import NavBar from './components/NavBar'
+import { Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import ProgrammsPage from './pages/ProgrammsPage';
+import SchedulePage from './pages/SchedulePage';
+import ContactsPage from './pages/ContactsPage';
+import AdminPage from './pages/AdminPage';
+import EditGroupPage from './pages/EditGroupPage';
+import './App.css';
+import NavBar from './components/NavBar';
+
 
 export default function App() { 
 
@@ -18,6 +20,7 @@ export default function App() {
         <Route path='/schedule' element={<SchedulePage />} />
         <Route path='/contacts' element={<ContactsPage />} />
         <Route path='/admin' element={<AdminPage />} />
+        <Route path='/admin/update/:group_id}' element={<EditGroupPage />} />
         <Route path='*' element={ <h1>404: Page Not Found</h1> } />
       </Routes>
     </>
