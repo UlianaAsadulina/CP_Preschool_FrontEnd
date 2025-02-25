@@ -57,30 +57,38 @@ export default function EditGroupPage() {
     }
 
     function handleTeacherChange(i, e) {
-        setFormData((prev) => ({
+       
+        let newTeachers =  [...formData.teachers]
+        newTeachers[i][e.target.name] = e.target.value
+        setFormData((prev) => (
+            {
             ...prev,
-            teachers: {
-                ...prev.teachers,
-                [i]: {
-                    ...prev.teachers[i],
-                    [e.target.name]: e.target.value,
-                },
-            },
+            teachers: [...newTeachers],
+            kids: [...prev.kids]
         }));
+    }
+
+    function handleTeacherDelete (i) {
+        let newTeachers =  [...formData.teachers];
+        // splice(start, deleteCount)
+        newTeachers.splice(i, 1);
+        setFormData((prev) => (
+            { ...prev,
+            teachers: [...newTeachers],
+            kids: [...prev.kids]
+            }
+        ));
     }
 
 
 
     function handleKidChange(i, e) {
+        let newKids =  [...formData.kids]
+        newKids[i][e.target.name] = e.target.value        
         setFormData((prev) => ({
             ...prev,
-            kids: {
-                ...prev.kids,
-                [i]: {
-                    ...prev.kids[i],
-                    [e.target.name]: e.target.value,
-                },
-            },
+            teachers: [...prev.teachers],            
+            kids: [...newKids],
         }));
     }
 
@@ -151,12 +159,13 @@ export default function EditGroupPage() {
                             </td>
                             <td>
                                 <textarea key={index} name="teacherInfo"
+                                    rows="2" cols="70"
                                     value={teacher.teacherInfo}
                                     onChange={(e) => handleTeacherChange(index, e)}>
                                 </textarea>
                             </td>
                             <td>
-                                <button><SlTrash /></button>
+                                <button onClick={() => handleTeacherDelete (index)}><SlTrash /></button>
                             </td>
                         </tr>
                     })}
