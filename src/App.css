@@ -1,0 +1,25 @@
+h1 {
+    text-align: center;
+}
+.programm {
+    display: flex;
+    margin: 10px;
+    padding: 10px;
+
+}
+
+.programmImage img {
+    max-width: 300px;
+    max-height: 300px;
+    padding-left: 15px;
+    padding-right: 15px;  
+    
+}
+
+.proggramText {
+    font-size: medium;
+    padding-left: 15px;
+    padding-right: 15px;    
+    text-align: justify;
+    text-justify: inter-word;
+}
