@@ -56,9 +56,9 @@ export default function ProgrammsPage() {
                     </p>
                 </div>
             </div>
-            <h3>Additional programms</h3>
+            <h3 className="subtitle">Additional programms</h3>
             <div className="programm">
-                <div className="proggramText" width="47%">
+                <div className="proggramText">
                     <h3>Before and After School</h3>
                     <p>
 
@@ -84,9 +84,9 @@ export default function ProgrammsPage() {
                     </p>
                 </div>
             </div>
-            <h3>Our partners</h3>
+            <h3 className="subtitle">Our partners</h3>
             <div className="programm">
-                <div className="proggramText" width="50%">
+                <div className="proggramText">
                     <img src="https://webbydancecompany.com/wp-content/uploads/2020/04/webby-logo.png" alt="webby logo" width="200px" />
                     <br />
                         <a href="https://webbydancecompany.com/">Webby Dance Company</a>
@@ -108,7 +108,7 @@ export default function ProgrammsPage() {
 
                 </div>
             </div>
-            <h4>! IMPORTANT ! Classes requared additional registation and payment </h4>
+            <h4 className="subtitle">! IMPORTANT ! Classes requared additional registation and payments </h4>
 
         </>
     );

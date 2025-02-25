@@ -1,6 +1,11 @@
 h1 {
     text-align: center;
 }
+
+.subtitle {
+    padding-left: 35px;
+}
+
 .programm {
     display: flex;
     margin: 10px;
