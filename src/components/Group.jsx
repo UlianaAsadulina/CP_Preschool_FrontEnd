@@ -46,9 +46,11 @@ export default function Group({ group, setCurrent }) {
 
     return (
         <>
-            <h3>Group: {group.group}       Max group size: {group.kidsInGroup} </h3>
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+            <h3>Group: {group.group}       Max group size: {group.kidsInGroup} 
+                <button onClick={handleEdit}>Edit</button>
+                <button onClick={handleDelete}>Delete</button>
+            </h3>
+            
             <p>Teachers:  <button onClick={() => setShowTeacherForm(true)}>Add new</button></p>
             
             {showTeacherForm && (<AddTeacherForm group_id={group._id} setShowTeacherForm={setShowTeacherForm} setCurrent={setCurrent} />)}

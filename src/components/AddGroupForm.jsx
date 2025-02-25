@@ -2,20 +2,14 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function AddGroupForm({ setShowForm }) {
-    // const [groupName, setGroupName] = useState()
-    // const [max, setMax] = useState()
+  
     const [formData, setFormData] = useState({});
 
-    function nameChange(e) {
-        // setGroupName(e.target.value);
+    function handleChange(e) {        
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
-    function maxChange(e) {
-        // setMax(e.target.value);
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    }
-
+    
 
     async function handleSubmit(e) {
         e.preventDefault();
@@ -28,22 +22,25 @@ export default function AddGroupForm({ setShowForm }) {
     }
     return (
         <form onSubmit={handleSubmit}>
+            <br />
             <label htmlFor="group"> Group name:
-                <input type="text" name="group" onChange={nameChange} />
+            <select name="group" onChange={handleChange}>
+                        <option value="Infants (6wks-12months)">Infants (6wks-12months)</option>
+                        <option value="Infants (12wks-18months)">Infants (12wks-18months)</option>
+                        <option value="Toddlers (18m-30m)">Toddlers (18m-30m)</option>
+                        <option value="Toddlers (30m-3yrs)">Toddlers (30m-3yrs)</option>
+                        <option value="Preschool (3yrs-4yrs)">Preschool (3yrs-4yrs)</option>
+                        <option value="Preschool (4yrs-5yrs)">Preschool (4yrs-5yrs)</option>
+                    </select>
+                
             </label>
             <label htmlFor="kidsInGroup"> Maximum children in group:
-                <input type="text" name="kidsInGroup" onChange={maxChange} />
+                <input type="text" name="kidsInGroup" onChange={handleChange} />
             </label>
-            {/* <label htmlFor="teachers">
-                Teachers            
-                <button>Add</button>
-            </label>
-            <label htmlFor="kids">
-                Children            
-                <button>Add</button>
-            </label> */}
+            <br /> <br />
             <button type="submit">Submit</button>
             <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
+            <br />
 
         </form>
     )

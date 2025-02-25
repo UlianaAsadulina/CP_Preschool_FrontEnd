@@ -43,7 +43,7 @@ export default function EditChildForm({group_id, child, setCurrent, setShowEditF
             <select name="attendTime" value={formData.attendTime} onChange={handleChange}>
                 <option value="full">Full day</option>
                 <option value="morning">Morning</option>
-                <option value="afternoon">Morning</option>
+                <option value="afternoon">Afternoon</option>
             </select>
             <br />
             <label htmlFor="parentName"> Parent/Guardian Name:
