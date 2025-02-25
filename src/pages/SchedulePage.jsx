@@ -18,6 +18,11 @@ export default function SchedulePage() {
                 <p>7:00 AM - 6:00 PM</p>
                 <p>7:00 AM - 5:30 PM</p>
             </div>
+            <div style={{ padding: "15px" }}>
+                <p>Part-time classes</p>
+                <p>Morning      8:30AM - 11:30AM</p>
+                <p>Afternoon   12:30PM - 3:30PM</p>
+            </div>
             
         </div>
         <h2>Enrollment</h2>

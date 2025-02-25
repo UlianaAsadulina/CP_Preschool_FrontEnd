@@ -16,6 +16,7 @@ h1 {
 .programmImage img {
     max-width: 300px;
     max-height: 300px;
+    object-fit: cover;
     padding-left: 15px;
     padding-right: 15px;  
     
@@ -27,4 +28,10 @@ h1 {
     padding-right: 15px;    
     text-align: justify;
     text-justify: inter-word;
+}
+
+.tuitionContainer {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px;
 }

@@ -7,6 +7,7 @@ import AdminPage from './pages/AdminPage';
 import EditGroupPage from './pages/EditGroupPage';
 import './App.css';
 import NavBar from './components/NavBar';
+import TuitionPage from './pages/TuitionPage';
 
 
 export default function App() { 
@@ -18,6 +19,7 @@ export default function App() {
         <Route path='/' element={ <HomePage /> } />
         <Route path='/programms' element={<ProgrammsPage />} />
         <Route path='/schedule' element={<SchedulePage />} />
+        <Route path='/tuition' element={<TuitionPage />} />
         <Route path='/contacts' element={<ContactsPage />} />
         <Route path='/admin' element={<AdminPage />} />
         <Route path='/admin/update/:id' element={<EditGroupPage />} />

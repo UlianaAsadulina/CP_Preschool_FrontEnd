@@ -108,7 +108,7 @@ export default function ProgrammsPage() {
 
                 </div>
             </div>
-            <h4 className="subtitle">! IMPORTANT ! Classes requared additional registation and payments </h4>
+            <h4 className="subtitle">! IMPORTANT ! Partner's Classes requared additional registation and payments </h4>
 
         </>
     );
