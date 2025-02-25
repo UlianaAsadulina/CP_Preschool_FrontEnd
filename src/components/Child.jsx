@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useState } from 'react';
 import EditChildForm from './EditChildForm';
+import { SlPencil, SlTrash } from "react-icons/sl";
 
 export default function Child({ group_id, child, setCurrent }) {
     const [showEditForm, setShowEditForm] = useState(false);
@@ -39,10 +40,10 @@ export default function Child({ group_id, child, setCurrent }) {
                 {child.parentEmail}  |
                 <button onClick={() => setShowEditForm(true)} 
                         disabled={ showEditForm ? true : false}                     
-                >Edit</button> |
+                ><SlPencil /></button> |
                 <button onClick={handleDelete}
                         disabled={ showEditForm ? true : false}   
-                >Delete</button>
+                ><SlTrash /></button>
             </p>
             {showEditForm && (<EditChildForm group_id={group_id} child={child} setShowEditForm={setShowEditForm} setCurrent={setCurrent} />)}
         </div>
