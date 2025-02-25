@@ -20,7 +20,7 @@ export default function App() {
         <Route path='/schedule' element={<SchedulePage />} />
         <Route path='/contacts' element={<ContactsPage />} />
         <Route path='/admin' element={<AdminPage />} />
-        <Route path='/admin/update/:group_id}' element={<EditGroupPage />} />
+        <Route path='/admin/update/:id' element={<EditGroupPage />} />
         <Route path='*' element={ <h1>404: Page Not Found</h1> } />
       </Routes>
     </>

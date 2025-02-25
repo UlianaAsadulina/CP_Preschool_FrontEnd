@@ -5,39 +5,26 @@ import axios from "axios";
 export default function EditChildForm({group_id, child, setCurrent, setShowEditForm }) {
     
     const [formData, setFormData] = useState(child);
-    const stringDate = toString(formData.childDOB);
+    
+    const splitDate = formData.childDOB.split("T");
+    const myDate = splitDate[0];
+
 
     function handleChange(e) {
         setFormData({ ...formData, [e.target.name]: e.target.value });       
     }
 
-    // function validateEmail(email) {
-    //     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    //     return emailRegex.test(email)
-    // };
-
-    // async function handleSubmit(e) {
-    //     e.preventDefault();
-    //     validateEmail();
-    //     if (validateEmail(formData.parentEmail)) {
-    //         try {
-    //             let result = await axios.post(`http://localhost:3000/groups/${group_id}/kids`, formData);
-    //             setCurrent(result);
-    //             setShowChildForm(false);
-    //         } catch (err) {
-    //             console.error(err);
-    //         } 
-    //     } else {
-    //         window.alert("Email ! NOT valid. Enter valid address");
-    //     }
-
 
     // };
-    function handleSubmit(e) {
-        e.preventDefault();
-        console.log("Changed:");
+    async function handleSubmit(e) {
+        e.preventDefault(); 
+        console.log("Child changed:");
         console.log(formData);
-        
+        //router.patch('/:id/kids/:kidId'
+        const result = await axios.patch(`http://localhost:3000/groups/${group_id}/kids/${formData._id}`, formData);
+        console.log("From database");
+        console.log(result.data);
+        setCurrent(result.data);              
         setShowEditForm(false);
     }
 
@@ -50,7 +37,7 @@ export default function EditChildForm({group_id, child, setCurrent, setShowEditF
             </label>
             <br />
             <label htmlFor="childDOB"> Child Date of Birth:
-                <input type="date" name="childDOB" value={formData.childDOB} onChange={handleChange} /> 
+                <input type="date" name="childDOB" value={myDate} onChange={handleChange} /> 
             </label>
             Attends:
             <select name="attendTime" value={formData.attendTime} onChange={handleChange}>

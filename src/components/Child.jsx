@@ -23,13 +23,16 @@ export default function Child({ group_id, child, setCurrent }) {
         // window.location.reload();
     }
 
+    const splitData = child.childDOB.split("T");
+    const onlyData = splitData[0]
+    // console.log(onlyData);
 
 
 
     return (
         <div className='child'>
             <p> {child.childName} |
-                {child.childDOB}  |
+                {onlyData}  |
                 {child.attendTime}  |
                 {child.parentName}  |
                 {child.parentPhone}  |

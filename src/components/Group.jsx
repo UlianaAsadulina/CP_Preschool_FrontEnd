@@ -35,8 +35,9 @@ export default function Group({ group, setCurrent }) {
     }
 
     function handleEdit() {
-        setCurrent(group);
-        nav(`/admin/update/${group.group_id}`);
+        // setCurrent(group);
+        console.log(group);
+        nav(`/admin/update/${group._id}`);
 
 
     }

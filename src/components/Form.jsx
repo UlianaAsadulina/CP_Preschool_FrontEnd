@@ -16,15 +16,15 @@ function Form() {
 
     async function getData() {
         const result = await axios.get('http://localhost:3000/groups');
-        console.log(result.data);             
+        // console.log(result.data);             
         setGroups(result.data);                
     };
 
     useEffect(() => {       
         try {            
             getData();
-            console.log(groups);
-            console.log("length"+groups.length);
+            //console.log(groups);
+            // console.log("length"+groups.length);
         } catch (err) {
             console.error(err)
         }        

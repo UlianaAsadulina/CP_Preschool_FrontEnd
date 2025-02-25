@@ -56,7 +56,7 @@ export default function EditTeacherForm({group_id, teacher, setShowEditForm, set
 
             <br />
             <button type="submit">Submit</button>
-            <button type="button" onClick={() => setShowTeacherForm(false)}>Cancel</button>
+            <button type="button" onClick={() => setShowEditForm(false)}>Cancel</button>
 
         </form>
     )
