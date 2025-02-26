@@ -6,6 +6,16 @@ h1 {
     padding-left: 35px;
 }
 
+.pageContainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.welcomeMessage {
+    
+    max-width: 600px;
+}
+
 .programm {
     display: flex;
     margin: 10px;
@@ -34,4 +44,14 @@ h1 {
     display: flex;
     flex-wrap: wrap;
     margin: 10px;
+}
+
+.spots {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.spotBtn {
+    margin-left: auto;
+    margin-right: auto;
 }

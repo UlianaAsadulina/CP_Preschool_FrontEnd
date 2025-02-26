@@ -6,7 +6,7 @@ export default function TuitionPage() {
             
             <div>
                 <div className="programmImage">
-                    <img src="../../public/programmsImg/infant.jpg" alt="infant" />
+                    <img src="/programmsImg/infant.jpg" alt="infant" />
                 </div>
                 <div style={{ textAlign: "center"}}>
                     <h2>Infants Weekly</h2>
@@ -16,7 +16,7 @@ export default function TuitionPage() {
             </div>
             <div>
                 <div className="programmImage">
-                    <img src="../../public/programmsImg/toddler.jpg" alt="infant" />
+                    <img src="/programmsImg/toddler.jpg" alt="infant" />
                 </div>
                 <div style={{ textAlign: "center"}}>
                     <h2>Toddlers Weekly</h2>
@@ -26,7 +26,7 @@ export default function TuitionPage() {
             </div>
             <div>
                 <div className="programmImage">
-                    <img src="../../public/programmsImg/preschool.jpg" alt="infant" />
+                    <img src="/programmsImg/preschool.jpg" alt="infant" />
                 </div>
                 <div style={{ textAlign: "center"}}>
                     <h2>Preschool Weekly</h2>
@@ -36,7 +36,7 @@ export default function TuitionPage() {
             </div>
             <div>
                 <div className="programmImage">
-                    <img src="../../public/programmsImg/school.jpg" alt="infant" />
+                    <img src="/programmsImg/school.jpg" alt="infant" />
                 </div>
                 <div style={{ textAlign: "center"}}>
                     <h2>Before and After School</h2>
@@ -47,7 +47,7 @@ export default function TuitionPage() {
             </div>
             <div>
                 <div className="programmImage">
-                    <img src="../../public/programmsImg/camp.jpg" alt="infant" />
+                    <img src="/programmsImg/camp.jpg" alt="infant" />
                 </div>
                 <div style={{ textAlign: "center"}}>
                     <h2>Summer Camp</h2>
