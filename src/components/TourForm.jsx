@@ -1,7 +1,13 @@
-export default function TourForm () {
-    return (<form>
+import "./TourForm.css";
+
+export default function TourForm ( {setShowForm}) {
+    function handleSubmit() {
+        setShowForm(false);
+    }
+
+    return (<form onSubmit={handleSubmit}>
         <p>If you would like more information about our center you can set up a tour. Just fill out the following form:</p>
-        <div>
+        <div className="formContainer">
             <div className="column">
                 <input type="text" placeholder="First name"/>
             </div>
@@ -9,7 +15,7 @@ export default function TourForm () {
                 <input type="text" placeholder="Last name" />
             </div>
         </div>
-        <div>
+        <div className="formContainer">
             <div className="column">
                 <input type="email" placeholder="E-mail" />
             </div>
@@ -17,9 +23,9 @@ export default function TourForm () {
                 <input type="tel" placeholder="Phone"/>
             </div>
         </div>
-        <div>
+        <div className="formContainer">
             <div className="column">
-                <label htmlFor="age">Select Age Group
+                <label htmlFor="age">Select Age Group <br />
                     <select name="age">
                         <option value="">--Select option--</option>
                         <option value="Infants (6w-12m)">Infants not mobile (6wks-12months)</option>
@@ -35,7 +41,7 @@ export default function TourForm () {
                 </label>
             </div>
             <div>
-                <label htmlFor="time"> Select time:
+                <label htmlFor="time"> Select time: <br />
                     <select name="time">
                         <option value="">--Select option--</option>
                         <option value="full">Full day</option>
@@ -46,7 +52,7 @@ export default function TourForm () {
             </div>
         </div>
 
-        <textarea name="" id="" cols="100" rows="10" placeholder="Additional comments"></textarea>
+        <textarea name="" placeholder="Additional comments"></textarea>
         <br />
         <button type="submit">SEND</button>
     </form> );

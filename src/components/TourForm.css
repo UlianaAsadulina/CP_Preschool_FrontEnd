@@ -1,0 +1,22 @@
+.formContainer {
+    display: flex;
+    flex-wrap: wrap;
+    
+}
+
+.column {
+    min-width: 45%;
+}
+
+.column input, select {
+    width: 95%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 89%;
+    height: fit-content;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
