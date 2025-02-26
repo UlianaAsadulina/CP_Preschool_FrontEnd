@@ -3,29 +3,44 @@ import "./Carousel.css";
 
 const imagesArray = [
     {  id: 0,
-        src: "/carouselImg/pexels-8.jpg",
+        src: "/carouselImg/pexels-0.jpg",
     },
     {
         id: 1,
-        src: "/carouselImg/pexels-7.jpg",
+        src: "/carouselImg/pexels-1.jpg",
     },
     {
         id: 2,
-        src: "/carouselImg/pexels-3.jpg",
+        src: "/carouselImg/pexels-2.jpg",
     },
     {
         id: 3,
-        src: "/carouselImg/pexels-4.jpg",
+        src: "/carouselImg/pexels-3.jpg",
     },
     {
         id: 4,
-        src: "/carouselImg/pexels-5.jpg",
+        src: "/carouselImg/pexels-4.jpg",
     },
     {
         id: 5,
+        src: "/carouselImg/pexels-5.jpg",
+    },
+    {
+        id: 6,
         src: "/carouselImg/pexels-6.jpg",
     },
-    
+    {
+        id: 7,
+        src: "/carouselImg/pexels-7.jpg",
+    },
+    {
+        id: 8,
+        src: "/carouselImg/pexels-8.jpg",
+    },
+    {
+        id: 9,
+        src: "/carouselImg/pexels-9.jpg",
+    },
     
 ];
 

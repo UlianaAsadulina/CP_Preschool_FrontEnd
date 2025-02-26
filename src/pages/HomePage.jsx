@@ -10,9 +10,9 @@ export default function HomePage() {
                 <Carousel />
             </div>
             <h1>Enrolment Availability</h1>
+            <h4 className="subtitle">If we have an opening that fits your families needs, please, call the center or set up a tour. 
+                After a tour, spots can be held with a registration fee of $50 for up to two weeks.</h4>
             <Spots />
-            <h3 className="subtitle">If we have an opening that fits your families needs please call the center or set up a tour with button above. 
-                After a tour, spots can be held with a registration fee of $50 for up to two weeks.</h3>
             
         </>
     );
