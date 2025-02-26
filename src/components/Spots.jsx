@@ -63,7 +63,7 @@ export default function Spots() {
         return <div className="spots">
         {groups.map((group, index) => {
             return <div className="oneSpot" key={index}>
-                <h4>{group.group}</h4>
+                <h4 className="subtitle">{group.group}</h4>
                 <div style={{ display: "flex" }}>
                     <div style={{ padding: "10px" }}>
                         {spots.length!=0 ? spots[index].full: 0} spots

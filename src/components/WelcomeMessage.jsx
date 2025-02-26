@@ -12,7 +12,10 @@ export default function WelcomeMessage() {
             <p>At our center, every child is part of our extended family, receiving personalized care and attention.</p>
             <p> Come visit us and see the magic in action!</p> 
             <p>Schedule a tour today to explore our nurturing spaces, meet our caring team, and discover why families trust us with their most precious treasures.</p>
-            <button onClick={() => setShowForm(true)}>Book a Tour</button>
+            <div className="btnContainer">
+              <button className="bookBtn" onClick={() => setShowForm(!showForm)}>Book a Tour</button>  
+            </div>
+            
             {showForm ? <TourForm setShowForm={setShowForm} />: <></>}
         </div>
     )

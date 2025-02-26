@@ -98,7 +98,7 @@ export default function ProgrammsPage() {
 
                 </div>
                 <div className="proggramText">
-                    <img src="https://cincysc.com/wp-content/uploads/2021/11/website-header-cincysc-logo-over-wordmark-trans.png" alt="" width="200px" />
+                    <img src="https://cincysc.com/wp-content/uploads/2021/11/website-header-cincysc-logo-over-wordmark-trans.png" alt="" width="260px" />
                     <br />
                     <a href="https://cincysc.com/"> Cincy Soccer</a>
 

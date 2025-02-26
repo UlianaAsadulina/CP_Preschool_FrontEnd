@@ -6,7 +6,7 @@ export default function ContactsPage() {
     <>
         <h1>Contact Us</h1> 
         <div style={{ display: "flex"}}>
-            <div style={{ width: "50%"}}>
+            <div className="proggramText" style={{ width: "50%"}}>
                  <h2 className="subtitle">The Preschool</h2>
                     <p><MdLocationOn style={{ paddingRight: "15px" }} /> 8249 Clough Pike, Cincinnati, OH 45244</p>
                     <p><MdLocalPhone style={{ paddingRight: "15px" }} />513-123-4567</p>

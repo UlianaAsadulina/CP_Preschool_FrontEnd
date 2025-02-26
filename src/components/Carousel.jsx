@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 import "./Carousel.css";
 
 const imagesArray = [
@@ -64,28 +65,31 @@ export default function Carousel() {
         );
     };
 
+
     return (
-        <div className="container">
-            <div className= "carouselContainer">
+        <div className="carousel">
+            <BsArrowLeftCircleFill onClick={prevImage} className="arrow arrow-left" />
+            {imagesArray.map((item, idx) => {
+                return (
                 <img
                     src={imagesArray[currentIndex].src}
-                    alt="Carousel Image"
-                    className="carouselImg"
+                    alt="Carousel Image"            
+                    className={currentIndex === idx ? "slide" : "slide slide-hidden"}
                 />
-                <button
-                    className="leftBtn"
-                    onClick={prevImage}
-                >
-                    ◀
-                </button>
-                <button
-                    className="rightBtn"
-                    onClick={nextImage}
-                >
-                    ▶
-                </button>
-            </div>
-            
+                );
+            })}
+            <BsArrowRightCircleFill onClick={nextImage} className="arrow arrow-right" />
+            <span className="indicators">
+                {imagesArray.map((_, idx) => {
+                    return (
+                        <button key={idx}
+                        className={ currentIndex === idx ? "indicator" : "indicator indicator-inactive" }
+                        onClick={() => setSlide(idx)}
+                        ></button>
+                        );
+                })}
+            </span>
         </div>
     );
 }
+    

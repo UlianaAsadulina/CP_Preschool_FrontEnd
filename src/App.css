@@ -1,3 +1,24 @@
+body {
+    background-color: #FFF8E8;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    color: #5C5C5C;
+}
+
+.button {
+    background-color: #F5A092;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button:hover {
+    background-color: #F6B497;
+}
+
 h1 {
     text-align: center;
 }
@@ -9,11 +30,48 @@ h1 {
 .pageContainer {
     display: flex;
     flex-wrap: wrap;
+    margin: auto;
+    padding: 20px;
+    justify-content: space-around;
+
 }
 
 .welcomeMessage {
     
-    max-width: 600px;
+    max-width: 800px;
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);        
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.btnContainer {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.bookBtn {
+    
+        background-color: #ab8cb5;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 10px;
+        font-size: 1.2em;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-left: auto;
+        margin-right: auto;
+       
+    
+
+}
+
+.bookBtn:hover {
+    background-color: rgb(217, 164, 235);
 }
 
 .programm {
@@ -51,9 +109,30 @@ h1 {
     flex-wrap: wrap;
 }
 
+.oneSpot {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 20px;
+    margin: 10px;
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);        
+    text-align: justify;
+    text-justify: inter-word;
+}
+
 .spotBtn {
+    background-color: #a1d3d0;
     margin-left: auto;
     margin-right: auto;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.spotBtn:hover {
+    background-color: #a9e7e3;
 }
 
 .personImg img {

@@ -1,6 +1,18 @@
+form {
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    background: rgba(255, 255, 255, 0.7);
+    padding: 20px;          
+    border-radius: 15px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 .formContainer {
     display: flex;
     flex-wrap: wrap;
+   
     
 }
 
@@ -19,4 +31,18 @@ textarea {
     height: fit-content;
     margin-top: 5px;
     margin-bottom: 5px;
+}
+
+.button {
+    background: #F5A092;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.button:hover {
+    background: #F6B497;
 }

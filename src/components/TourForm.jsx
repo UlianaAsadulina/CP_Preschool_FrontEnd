@@ -54,6 +54,9 @@ export default function TourForm ( {setShowForm}) {
 
         <textarea name="" placeholder="Additional comments"></textarea>
         <br />
-        <button type="submit">SEND</button>
+        <div className="btnContainer">
+           <button type="submit" className="button">SEND</button> 
+        </div>
+        
     </form> );
 }
