@@ -70,14 +70,7 @@ export default function Carousel() {
                     ▶
                 </button>
             </div>
-            <div className="flex gap-2 mt-4">
-                {imagesArray.map((_, index) => (
-                    <div
-                        key={index}
-                        className={`w-3 h-3 rounded-full ${currentIndex === index ? "bg-blue-500" : "bg-gray-400"}`}
-                    />
-                ))}
-            </div>
+            
         </div>
     );
 }
