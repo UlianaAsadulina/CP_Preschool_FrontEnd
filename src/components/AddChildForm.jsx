@@ -49,7 +49,7 @@ export default function AddChildForm({group_id, setCurrent, setShowChildForm }) 
             <select name="attendTime" defaultValue="full" onChange={handleChange}>
                 <option value="full">Full day</option>
                 <option value="morning">Morning</option>
-                <option value="afternoon">Morning</option>
+                <option value="afternoon">Afternoon</option>
             </select>
             <br />
             <label htmlFor="parentName"> Parent/Guardian Name:
