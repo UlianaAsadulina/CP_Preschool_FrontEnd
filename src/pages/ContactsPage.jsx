@@ -5,7 +5,7 @@ export default function ContactsPage() {
     return (
     <>
         <h1>Contact Us</h1> 
-        <div style={{ display: "flex"}}>
+        <div style={{ display: "flex", flexWrap: "wrap"}}>
             <div className="proggramText" style={{ width: "50%"}}>
                  <h2 className="subtitle">The Preschool</h2>
                     <p><MdLocationOn style={{ paddingRight: "15px" }} /> 8249 Clough Pike, Cincinnati, OH 45244</p>
@@ -31,7 +31,7 @@ export default function ContactsPage() {
 
         
         <h1>Our administrators</h1>
-        <div style={{ display: "flex"}}>
+        <div style={{ display: "flex", flexWrap: "wrap"}}>
             <div style={{ width: "50%"}}>
                 <div className="personImg">
                     <img src="/profile-picture.jpg" alt="photo" />
