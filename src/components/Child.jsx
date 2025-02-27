@@ -30,22 +30,25 @@ export default function Child({ group_id, child, setCurrent }) {
 
 
 
-    return (
+    return (<>
         <div className='child'>
-            <p> {child.childName} |
-                {onlyData}  |
-                {child.attendTime}  |
-                {child.parentName}  |
-                {child.parentPhone}  |
-                {child.parentEmail}  |
-                <button onClick={() => setShowEditForm(true)} 
+                <div style={{ width: "160px" }}>{child.childName}</div>
+                <div style={{ width: "100px" }}>{onlyData}</div>
+                <div style={{ width: "90px" }}>{child.attendTime}</div>
+                <div style={{ width: "160px" }}>{child.parentName}</div>
+                <div style={{ width: "110px" }}>{child.parentPhone}</div>
+                <div style={{ width: "250px" }}>{child.parentEmail}</div>
+
+                <button className='editBtn'
+                        onClick={() => setShowEditForm(true)} 
                         disabled={ showEditForm ? true : false}                     
-                ><SlPencil /></button> |
-                <button onClick={handleDelete}
+                ><SlPencil /></button>
+                <button className='delBtn'
+                        onClick={handleDelete}
                         disabled={ showEditForm ? true : false}   
                 ><SlTrash /></button>
-            </p>
+        </div>    
             {showEditForm && (<EditChildForm group_id={group_id} child={child} setShowEditForm={setShowEditForm} setCurrent={setCurrent} />)}
-        </div>
+        </>
     );
 }

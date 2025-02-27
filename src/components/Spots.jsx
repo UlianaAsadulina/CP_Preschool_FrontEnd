@@ -7,7 +7,7 @@ export default function Spots() {
 
     async function getData() {
         const result = await axios.get('http://localhost:3000/groups');
-        console.log(result.data);             
+        // console.log(result.data);             
         setGroups(result.data);
     };
 
@@ -33,15 +33,15 @@ export default function Spots() {
                 }
             }
         
-            console.log(`Object ${k} =${count[k].full}, ${count[k].morning}, ${count[k].afternoon}`);          
+            // console.log(`Object ${k} =${count[k].full}, ${count[k].morning}, ${count[k].afternoon}`);          
             let newSpots = { 
                 full: groups[k].kidsInGroup- count[k].full ,
                 morning: 5 - count[k].morning ,
                 afternoon: 5 - count[k].afternoon
             }
-            console.log(newSpots)
+            // console.log(newSpots)
             setSpots(prev => [...prev, newSpots]);
-            console.log(spots);
+            // console.log(spots);
         }
     }
 
@@ -50,7 +50,7 @@ export default function Spots() {
         try {
             getData(); 
             getSpots() ;
-            console.log(spots);
+            // console.log(spots);
 
             
         } catch (err) {

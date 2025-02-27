@@ -20,17 +20,31 @@ export default function Teacher({ group_id, teacher, setCurrent }) {
 
 
 
-    return (
+    return (<>
+        
         <div className="teacher">
+           
+                <div style={{ width: "50px" }}> {teacher.teacherRole}  </div>
+                <div style={{ width: "70px" }}>
+                    {teacher.teacherFirstName}
+                </div>
+                <div style={{ width: "100px" }}>
+                    {teacher.teacherLastName}
+                </div>
+                <div style={{ width: "650px" }}>
+                {teacher.teacherInfo}
+                </div>                     
+                <button className="editBtn" onClick={() => setShowEditForm(true)} disabled={ showEditForm ? true : false} ><SlPencil /></button>
+                <button className="delBtn" onClick={handleDelete} disabled={ showEditForm ? true : false} ><SlTrash /></button>
             
-            <p> {teacher.teacherRole}  |
-                {teacher.teacherFirstName}   {teacher.teacherLastName}  
-                <button onClick={() => setShowEditForm(true)} disabled={ showEditForm ? true : false} ><SlPencil /></button>
-                <button onClick={handleDelete} disabled={ showEditForm ? true : false} ><SlTrash /></button></p>
-            <p> {teacher.teacherInfo}</p>
+
+        </div>    
+            
+                
+             
 
             {showEditForm && (<EditTeacherForm group_id={group_id} teacher={teacher} setShowEditForm={setShowEditForm} setCurrent={setCurrent} />)}
 
-        </div>
-    );
+        
+            </>);
 }

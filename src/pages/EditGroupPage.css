@@ -1,0 +1,75 @@
+.adminForm {
+    text-align: left;
+    align-items: start;
+    max-width: fit-content;
+}
+
+.delBtn {
+    background-color:  #f4938a;
+    color: white;
+    margin-left: 10px;
+    height: 28px;
+    width: 28px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;    
+    cursor: pointer;
+}
+.delBtn:disabled {
+    background-color: gainsboro;
+}
+
+.submit, .cancel {
+    margin: 5px 10px 30px 5px;
+    background-color: #b6cd73;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.submit {    
+    background-color: #b6cd73;
+}
+
+.submit:hover {
+    background-color:  #c8e07e;
+}
+
+.cancel {    
+    background-color: #f38980;
+   
+}
+
+.cancel:hover {
+    background-color:  #f4938a;
+}
+
+h3 {
+    padding: 15px 0;
+    
+}
+
+.adminForm select {
+    padding: 5px;
+    height: 27px;
+}
+
+.adminForm textarea {
+    align-items: baseline;
+}
+
+.addBtn {
+    background-color: rgb(158, 148,147);
+    color: white;
+    font-size: 1.25rem;
+    box-shadow: none;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    margin-left: 20px;
+    
+}

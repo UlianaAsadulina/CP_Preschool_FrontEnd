@@ -36,7 +36,7 @@ function Form() {
 
     return (
         <>
-            <button onClick={addHandle}>Add New Group</button>
+            <button className="button" onClick={addHandle}>Add New Group</button>
              {/* Show the form above all when "Add new" is clicked */}
              {showForm && (<AddGroupForm setShowForm={setShowForm} />)}
            

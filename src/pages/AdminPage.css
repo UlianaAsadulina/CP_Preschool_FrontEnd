@@ -1,0 +1,45 @@
+
+.admin {
+    text-align: left;
+}
+
+input {
+    margin: 5px;
+    padding: 5px;
+
+
+}
+
+select {
+    width: fit-content;
+    box-sizing: border-box;
+    margin: 5px;
+    padding: 5px;
+    height: 27px;
+}
+
+textarea {
+    width: 60%;
+}
+
+.editBtn {
+    background-color:  #b6cd73;
+    color: white;
+    
+    margin-left: 15px;
+    height: 28px;
+    width: 28px;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;    
+    cursor: pointer;
+}
+.editBtn:disabled {
+    background-color: gainsboro;
+}
+
+.teacher, .child {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 5px;
+}

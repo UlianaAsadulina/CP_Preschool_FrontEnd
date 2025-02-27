@@ -104,6 +104,17 @@ h1 {
     margin: 10px;
 }
 
+.scheduleContainer {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 5px;    
+}
+
+.scheduleContainer > div {
+    padding: 15px;
+}
+
 .spots {
     display: flex;
     flex-wrap: wrap;
@@ -140,3 +151,13 @@ h1 {
     width: 300px;
     height: 300px;
 }
+
+@media (max-width: 750px) {
+    .programm {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+    }
+
+}
+

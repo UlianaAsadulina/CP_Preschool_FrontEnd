@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "../pages/EditGroupPage.css";
 
 export default function AddGroupForm({ setShowForm }) {
   
@@ -38,8 +39,8 @@ export default function AddGroupForm({ setShowForm }) {
                 <input type="text" name="kidsInGroup" onChange={handleChange} />
             </label>
             <br /> <br />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => setShowForm(false)}>Cancel</button>
+            <button className="submit" type="submit">Submit</button>
+            <button className="cancel" type="button" onClick={() => setShowForm(false)}>Cancel</button>
             <br />
 
         </form>

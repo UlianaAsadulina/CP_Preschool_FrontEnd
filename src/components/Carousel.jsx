@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
+import { BsArrowLeftCircleFill, BsArrowRightCircleFill, BsHandIndex } from "react-icons/bs";
 import "./Carousel.css";
 
 const imagesArray = [
@@ -55,36 +55,37 @@ export default function Carousel() {
         return () => clearInterval(interval);
     }, []);
 
-    function nextImage () {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesArray.length);
-    };
+    // function nextImage () {
+    //     setCurrentIndex((prevIndex) => (prevIndex + 1) % imagesArray.length);
+    // };
 
-    function prevImage () {
-        setCurrentIndex((prevIndex) =>
-            prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
-        );
-    };
+    // function prevImage () {
+    //     setCurrentIndex((prevIndex) =>
+    //         prevIndex === 0 ? imagesArray.length - 1 : prevIndex - 1
+    //     );
+    // };
 
 
     return (
         <div className="carousel">
-            <BsArrowLeftCircleFill onClick={prevImage} className="arrow arrow-left" />
-            {imagesArray.map((item, idx) => {
+            {/* <BsArrowLeftCircleFill onClick={prevImage} className="arrow arrow-left" /> */}
+            {imagesArray.map((item, index) => {
                 return (
-                <img
-                    src={imagesArray[currentIndex].src}
-                    alt="Carousel Image"            
-                    className={currentIndex === idx ? "slide" : "slide slide-hidden"}
+                <img 
+                    src={item.src}
+                    alt={`Carousel Image ${index}`}            
+                    className={currentIndex === index ? "slide" : "slide slide-hidden"}
+                    key={index}
                 />
                 );
             })}
-            <BsArrowRightCircleFill onClick={nextImage} className="arrow arrow-right" />
+            {/* <BsArrowRightCircleFill onClick={nextImage} className="arrow arrow-right" /> */}
             <span className="indicators">
-                {imagesArray.map((_, idx) => {
+                {imagesArray.map((_, index) => {
                     return (
-                        <button key={idx}
-                        className={ currentIndex === idx ? "indicator" : "indicator indicator-inactive" }
-                        onClick={() => setSlide(idx)}
+                        <button key={index}
+                        className={ currentIndex === index ? "indicator" : "indicator indicator-inactive" }
+                        onClick={() => setCurrentIndex(index)}
                         ></button>
                         );
                 })}

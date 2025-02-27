@@ -55,8 +55,8 @@ export default function EditTeacherForm({group_id, teacher, setShowEditForm, set
                         onChange={handleChange}></textarea>
 
             <br />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => setShowEditForm(false)}>Cancel</button>
+            <button className="submit" type="submit">Submit</button>
+            <button className="cancel" type="button" onClick={() => setShowEditForm(false)}>Cancel</button>
 
         </form>
     )

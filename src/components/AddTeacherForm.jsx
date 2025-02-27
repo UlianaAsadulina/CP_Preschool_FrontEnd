@@ -1,5 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
+import "../pages/AdminPage.css";
 
 
 export default function AddTeacherForm({ group_id, setCurrent, setShowTeacherForm }) {
@@ -47,8 +48,8 @@ export default function AddTeacherForm({ group_id, setCurrent, setShowTeacherFor
             <textarea name="teacherInfo" onChange={handleChange}></textarea>
 
             <br />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={() => setShowTeacherForm(false)}>Cancel</button>
+            <button className="submit" type="submit">Submit</button>
+            <button className="cancel" type="button" onClick={() => setShowTeacherForm(false)}>Cancel</button>
 
         </form>
     )

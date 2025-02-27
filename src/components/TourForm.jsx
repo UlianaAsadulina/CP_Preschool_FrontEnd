@@ -5,7 +5,7 @@ export default function TourForm ( {setShowForm}) {
         setShowForm(false);
     }
 
-    return (<form onSubmit={handleSubmit}>
+    return (<form className="tourForm" onSubmit={handleSubmit}>
         <p>If you would like more information about our center you can set up a tour. Just fill out the following form:</p>
         <div className="formContainer">
             <div className="column">
@@ -40,7 +40,7 @@ export default function TourForm ( {setShowForm}) {
                     </select>
                 </label>
             </div>
-            <div>
+            <div className="column">
                 <label htmlFor="time"> Select time: <br />
                     <select name="time">
                         <option value="">--Select option--</option>
@@ -52,7 +52,7 @@ export default function TourForm ( {setShowForm}) {
             </div>
         </div>
 
-        <textarea name="" placeholder="Additional comments"></textarea>
+        <textarea  name="comments" placeholder="Additional comments"></textarea>
         <br />
         <div className="btnContainer">
            <button type="submit" className="button">SEND</button> 

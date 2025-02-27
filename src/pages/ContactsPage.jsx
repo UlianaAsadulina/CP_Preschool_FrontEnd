@@ -32,7 +32,7 @@ export default function ContactsPage() {
         
         <h1>Our administrators</h1>
         <div style={{ display: "flex"}}>
-            <div>
+            <div style={{ width: "50%"}}>
                 <div className="personImg">
                     <img src="/profile-picture.jpg" alt="photo" />
                 </div>
@@ -48,20 +48,21 @@ export default function ContactsPage() {
                     <p>My goal is to make learning fun, meaningful, and filled with joy, ensuring that every child feels safe, supported, and excited to come to school each day.</p>
                 </div>
             </div>
-            <div>
-            <div className="personImg">
-                    <img src="/profile-picture.jpg" alt="photo" />
+            <div  style={{ width: "50%"}}>
+                <div className="personImg">
+                        <img src="/profile-picture.jpg" alt="photo" />
                 </div>
                 <h3 className="subtitle">FirstName LastName</h3>
-                <h4 className="subtitle">Administrator and Location Coordinator</h4>
+                 <h4 className="subtitle">Administrator and Location Coordinator</h4>
 
                 <div className="proggramText">
-                    <p> With a degree in Early Childhood Education and over eight years of experience in preschool administration, I am dedicated to ensuring a safe, nurturing, and enriching environment for every child and family we serve.</p>
-                    <p>My journey in early childhood education began in the classroom, where I discovered my passion for supporting both children and educators. Now, as an administrator, I focus on creating a well-organized, welcoming space where learning and play go hand in hand. From coordinating daily activities to maintaining a warm and supportive atmosphere, my goal is to make every family feel at home.</p>
-                    <p>I believe that strong communication, a caring community, and a focus on each child's well-being make all the difference. I'm here to help with any questions, support our amazing teachers, and ensure that your little one has a wonderful experience at our preschool.</p>
+                        <p> With a degree in Early Childhood Education and over eight years of experience in preschool administration, I am dedicated to ensuring a safe, nurturing, and enriching environment for every child and family we serve.</p>
+                        <p>My journey in early childhood education began in the classroom, where I discovered my passion for supporting both children and educators. Now, as an administrator, I focus on creating a well-organized, welcoming space where learning and play go hand in hand. From coordinating daily activities to maintaining a warm and supportive atmosphere, my goal is to make every family feel at home.</p>
+                        <p>I believe that strong communication, a caring community, and a focus on each child's well-being make all the difference. I'm here to help with any questions, support our amazing teachers, and ensure that your little one has a wonderful experience at our preschool.</p>
                 </div>
             </div>
         </div>
+        
   
   
 

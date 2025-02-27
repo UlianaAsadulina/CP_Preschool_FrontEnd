@@ -3,10 +3,11 @@ import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { SlTrash, SlPlus } from "react-icons/sl";
 import axios from "axios";
+import "./EditGroupPage.css"
 
 export default function EditGroupPage() {
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
     const navigate = useNavigate();
     const [addRow, setAddRow] = useState(false)
 
@@ -20,7 +21,7 @@ export default function EditGroupPage() {
 
     async function getData() {
         const result = await axios.get(`http://localhost:3000/groups/${id}`);
-        console.log(result.data);
+        // console.log(result.data);
         // destructure result
         const { teachers, kids, ...restData } = result.data[0];
         // update state
@@ -35,13 +36,13 @@ export default function EditGroupPage() {
         }
     }, []);
 
-    console.log(formData);
+    // console.log(formData);
 
-    console.log("ID:" + formData._id);
-    console.log("Name:" + formData.group)
+    // console.log("ID:" + formData._id);
+    // console.log("Name:" + formData.group)
 
     const teachers = formData.teachers
-    console.log("T " + teachers);
+    // console.log("T " + teachers);
     const kids = formData.kids
 
     for (let i = 0; i < kids.length; i++) {
@@ -49,11 +50,11 @@ export default function EditGroupPage() {
         const myDate = splitDate[0];
         kids[i].childDOB = myDate;
     };
-    console.log("Ch " + kids);
+    // console.log("Ch " + kids);
 
 
     function handleChange(e) {
-        console.log(e.target)
+        // console.log(e.target)
         setFormData({ ...formData, [e.target.name]: e.target.value });
     }
 
@@ -91,10 +92,11 @@ export default function EditGroupPage() {
     //         </tr>
     //     )
     // }
+
     function handleTeacherChange(i, e) {
        
         let newTeachers =  [...formData.teachers];
-        console.log(newTeachers[i][e.target.name]);
+        // console.log(newTeachers[i][e.target.name]);
         newTeachers[i][e.target.name] = e.target.value
        
         setFormData((prev) => (
@@ -107,7 +109,7 @@ export default function EditGroupPage() {
 
     function handleTeacherDelete (i) {
         let newTeachers =  [...formData.teachers];
-        // splice(start, deleteCount)
+        
         newTeachers.splice(i, 1);
         setFormData((prev) => (
             { ...prev,
@@ -160,7 +162,7 @@ export default function EditGroupPage() {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="adminForm" onSubmit={handleSubmit}>
             <label htmlFor="group">
                 <h3>Group name:
                     <select name="group" value={formData.group} onChange={handleChange}>
@@ -177,8 +179,11 @@ export default function EditGroupPage() {
             <label htmlFor="kidsInGroup"> Maximum children in group:
                 <input type="text" name="kidsInGroup" value={formData.kidsInGroup} onChange={handleChange} />
             </label>
-            <h3>Teachers:  {teachers.length} </h3>
-            <button onClick={() => setAddRow(true)}> <SlPlus /> </button>
+
+            <h3>Teachers:  {teachers.length} 
+                <button className="addBtn" onClick={() => setAddRow(true)}>+</button>
+            </h3>
+            
             <table>
                 <thead>
                     <tr>
@@ -189,8 +194,7 @@ export default function EditGroupPage() {
                         <th scope="col">Del</th>
                     </tr>
                 </thead>
-                <tbody>
-                    {/* { addRow ? AddTeacher(): <></>} */}
+                <tbody>                  
 
                     {teachers.map((teacher, index) => {
 
@@ -222,7 +226,7 @@ export default function EditGroupPage() {
                                 </textarea>
                             </td>
                             <td>
-                                <button onClick={() => handleTeacherDelete (index)}><SlTrash /></button>
+                                <button className="delBtn" onClick={() => handleTeacherDelete (index)}><SlTrash /></button>
                             </td>
                         </tr>
                     })}
@@ -230,8 +234,10 @@ export default function EditGroupPage() {
                 </tbody>
             </table>
             <br />
-            <h3>Children:  {kids.length}</h3>
-            <button><SlPlus /></button>
+            <h3>Children:  {kids.length}
+                <button className="addBtn">+</button>
+            </h3>
+            
             <table>
                 <thead>
                     <tr>
@@ -272,15 +278,15 @@ export default function EditGroupPage() {
                                 <input type="email" name="parentEmail" key={index} value={kid.parentEmail} onChange={(e) => handleKidChange(index, e)} />
                             </td>
                             <td>
-                                <button onClick={() => handleKidDelete (index)}><SlTrash /></button>
+                                <button className="delBtn" onClick={() => handleKidDelete (index)}><SlTrash /></button>
                             </td>
                         </tr>
                     })}
                 </tbody>
             </table>
             <br />
-            <button type="submit">Submit</button>
-            <button type="button" onClick={handleCancel}>Cancel</button>
+            <button type="submit" className="submit">Submit</button>
+            <button type="button" className="cancel" onClick={handleCancel}>Cancel</button>
 
         </form>
     );
