@@ -19,12 +19,12 @@ export default function EditChildForm({group_id, child, setCurrent, setShowEditF
     // };
     async function handleSubmit(e) {
         e.preventDefault(); 
-        console.log("Child changed:");
-        console.log(formData);
+        // console.log("Child changed:");
+        // console.log(formData);
         //router.patch('/:id/kids/:kidId'
         const result = await axios.patch(`http://localhost:3000/groups/${group_id}/kids/${formData._id}`, formData);
-        console.log("From database");
-        console.log(result.data);
+        // console.log("From database");
+        // console.log(result.data);
         setCurrent(result.data);              
         setShowEditForm(false);
     }

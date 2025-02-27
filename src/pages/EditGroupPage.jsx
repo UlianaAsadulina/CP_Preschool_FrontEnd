@@ -146,12 +146,12 @@ export default function EditGroupPage() {
 
     async function handleSubmit(e) {
         e.preventDefault(); 
-        console.log("Group changed:");
-        console.log(formData);
+        // console.log("Group changed:");
+        // console.log(formData);
         //router.patch('/:id/kids/:kidId'
         const result = await axios.put(`http://localhost:3000/groups/${id}`, formData);
-        console.log("From database");
-        console.log(result.data);
+        // console.log("From database");
+        // console.log(result.data);
         navigate('/admin');
     }
 

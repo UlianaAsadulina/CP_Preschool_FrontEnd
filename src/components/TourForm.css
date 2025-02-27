@@ -35,7 +35,7 @@ label {
     box-sizing: border-box;
 }
 
-textarea {
+.tourForm textarea {
     width: 97%;
     height: 50px;
     margin: 5px 0px;
