@@ -26,6 +26,7 @@ export default function AddGroupForm({ setShowForm }) {
             <br />
             <label htmlFor="group"> Group name:
             <select name="group" onChange={handleChange}>
+                        <option value="">--select the age group--</option>
                         <option value="Infants (6wks-12months)">Infants (6wks-12months)</option>
                         <option value="Infants (12wks-18months)">Infants (12wks-18months)</option>
                         <option value="Toddlers (18m-30m)">Toddlers (18m-30m)</option>
