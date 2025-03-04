@@ -6,7 +6,7 @@ export default function Spots() {
     const [spots, setSpots] = useState([]);
 
     async function getData() {
-        const result = await axios.get('http://localhost:3000/groups');
+        const result = await axios.get('https://thepreschool.onrender.com/groups');
         // console.log(result.data);             
         setGroups(result.data);
     };

@@ -20,7 +20,7 @@ export default function EditGroupPage() {
         });
 
     async function getData() {
-        const result = await axios.get(`http://localhost:3000/groups/${id}`);
+        const result = await axios.get(`https://thepreschool.onrender.com/groups/${id}`);
         // console.log(result.data);
         // destructure result
         const { teachers, kids, ...restData } = result.data[0];
@@ -149,7 +149,7 @@ export default function EditGroupPage() {
         // console.log("Group changed:");
         // console.log(formData);
         //router.patch('/:id/kids/:kidId'
-        const result = await axios.put(`http://localhost:3000/groups/${id}`, formData);
+        const result = await axios.put(`https://thepreschool.onrender.com/groups/${id}`, formData);
         // console.log("From database");
         // console.log(result.data);
         navigate('/admin');

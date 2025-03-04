@@ -10,7 +10,7 @@ export default function Teacher({ group_id, teacher, setCurrent }) {
 
     async function handleDelete() {
         console.log("TRY to Delete " + teacher._id + " " + " from " + group_id);
-        const result = await axios.delete(`http://localhost:3000/groups/${group_id}/teachers/${teacher._id}`);
+        const result = await axios.delete(`https://thepreschool.onrender.com/groups/${group_id}/teachers/${teacher._id}`);
         //console.log(result.data);
         setCurrent(result.data);
 
