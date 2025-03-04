@@ -15,6 +15,7 @@ Web page for local preschool who has only one location. The goal is give adminis
 * [Features](#features)
 * [Design](#design)
 * [Project Next Steps](#nextsteps)
+* [Deployed App](#deployment)
 * [Repository Links](#github)
 * [About the Author](#author)
 
@@ -54,6 +55,11 @@ Ex: Design elements implemented using HTML5 and CSS3.
 * Add new role Teacher as a user for attendance tracking.
 * Allow admin edit main carousel
 * Edit carousel and allow to use not only pictures but also event bunners with button, lead to submit partisipation
+
+
+## <a name="deployment"></a>Deployed Link
+[Render](https://thepreschoolapp.onrender.com/)
+
  
 ## <a name="github"></a>Repository Links
 
