@@ -18,7 +18,7 @@ export default function Child({ group_id, child, setCurrent }) {
     async function handleDelete() {
         // router.patch('/:id/kids/:kidId'
         console.log("TRY to Delete " + child._id + " " + child.childName + " from " + group_id);
-        const result = await axios.delete(`https://thepreschool.onrender.com/groups/${group_id}/kids/${child._id}`);
+        const result = await axios.delete(`https://localhost3000/groups/${group_id}/kids/${child._id}`);
         console.log(result.data);
         setCurrent(result.data);
         // window.location.reload();

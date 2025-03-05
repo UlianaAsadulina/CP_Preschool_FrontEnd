@@ -18,7 +18,7 @@ export default function AddTeacherForm({ group_id, setCurrent, setShowTeacherFor
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            let result = await axios.post(`https://thepreschool.onrender.com/groups/${group_id}/teachers`, formData);
+            let result = await axios.post(`https://localhost3000/groups/${group_id}/teachers`, formData);
             setCurrent(result);
             setShowTeacherForm(false);
 

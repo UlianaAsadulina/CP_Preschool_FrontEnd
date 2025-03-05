@@ -21,7 +21,7 @@ export default function AddChildForm({group_id, setCurrent, setShowChildForm }) 
         validateEmail();
         if (validateEmail(formData.parentEmail)) {
             try {
-                let result = await axios.post(`https://thepreschool.onrender.com/groups/${group_id}/kids`, formData);
+                let result = await axios.post(`https://localhost3000/groups/${group_id}/kids`, formData);
                 setCurrent(result);
                 setShowChildForm(false);
             } catch (err) {

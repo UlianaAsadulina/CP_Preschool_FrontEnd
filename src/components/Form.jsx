@@ -15,7 +15,7 @@ function Form() {
     }
 
     async function getData() {
-        const result = await axios.get('https://thepreschool.onrender.com/groups');
+        const result = await axios.get('https://localhost3000/groups');
         // console.log(result.data);             
         setGroups(result.data);                
     };

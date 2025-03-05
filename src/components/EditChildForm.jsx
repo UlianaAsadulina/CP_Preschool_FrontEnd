@@ -22,7 +22,7 @@ export default function EditChildForm({group_id, child, setCurrent, setShowEditF
         // console.log("Child changed:");
         // console.log(formData);
         //router.patch('/:id/kids/:kidId'
-        const result = await axios.patch(`https://thepreschool.onrender.com/groups/${group_id}/kids/${formData._id}`, formData);
+        const result = await axios.patch(`https://localhost3000/groups/${group_id}/kids/${formData._id}`, formData);
         // console.log("From database");
         // console.log(result.data);
         setCurrent(result.data);              
