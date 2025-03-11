@@ -1,5 +1,6 @@
 import { MdLocationOn, MdLocalPhone, MdOutlineMail } from "react-icons/md";
 import { LuCalendarClock } from "react-icons/lu";
+import MapComponent from "../components/mapComponent";
 
 export default function ContactsPage() {
     return (
@@ -23,8 +24,10 @@ export default function ContactsPage() {
                         </div>
                     </div>
             </div>
-            <div>
-                <img src="/map.jpg" alt="map" width={"400px"} height={"400px"}/>
+            <div style={{ width: "40%"}}>
+            
+                {/* <img src="/map.jpg" alt="map" width={"400px"} height={"400px"}/> */}
+                <MapComponent />
             </div>
         </div>       
         
