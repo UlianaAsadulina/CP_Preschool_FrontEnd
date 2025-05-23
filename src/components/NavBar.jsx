@@ -27,6 +27,9 @@ export default function NavBar() {
                 </li>
                 <li onClick={() => setMenuOpen(false)}>
                     <Link to="/admin">Administrator Page</Link>
+                </li> 
+                <li onClick={() => setMenuOpen(false)}>
+                    <Link to="/auth">Login</Link>
                 </li>                   
             </ul>
         </nav>

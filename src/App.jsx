@@ -8,6 +8,9 @@ import EditGroupPage from './pages/EditGroupPage';
 import './App.css';
 import NavBar from './components/NavBar';
 import TuitionPage from './pages/TuitionPage';
+import AuthPage from './pages/AuthPage';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
 
 
 export default function App() { 
@@ -21,6 +24,10 @@ export default function App() {
         <Route path='/schedule' element={<SchedulePage />} />
         <Route path='/tuition' element={<TuitionPage />} />
         <Route path='/contacts' element={<ContactsPage />} />
+        <Route path='/auth' element={<AuthPage />} />
+        <Route element={<ProtectedRoutes />}>
+          <Route path='/dashboard' element={<Dashboard />} />
+        </Route>
         <Route path='/admin' element={<AdminPage />} />
         <Route path='/admin/update/:id' element={<EditGroupPage />} />
         <Route path='*' element={ <h1>404: Page Not Found</h1> } />

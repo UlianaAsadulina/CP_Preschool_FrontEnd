@@ -1,4 +1,5 @@
 import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps';
+import { useState } from 'react';
 
 
 
@@ -6,6 +7,8 @@ import { APIProvider, Map, AdvancedMarker, Pin } from '@vis.gl/react-google-maps
 
 
 export default function MapComponent() {
+const [open, setOpen] = useState(false)
+
     const position = {
         lat: 39.087365,
         lng: -84.325568
@@ -15,14 +18,13 @@ export default function MapComponent() {
     const mapID = import.meta.env.VITE_MAP_ID;
 
     return  (
-    <APIProvider apiKey={apiKey}>      
+    <APIProvider apiKey={apiKey} >      
             
         
             <Map defaultZoom={12} 
                 defaultCenter={position} 
                 mapId={mapID}>
-                <AdvancedMarker key="The Preschool" position={position}>
-                    <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'} />
+                <AdvancedMarker key="The Preschool" position={position} onClick={() => setOpen(true)}>                    <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'} />
                 </AdvancedMarker>
             </Map>
             
