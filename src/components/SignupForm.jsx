@@ -2,19 +2,21 @@ import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/auth_context';
 
+
+
 const SignUp = ({ setNewUser }) => {
-    const { signUp } = useAuth();
+
     const nav = useNavigate();
+    const { signUp } = useAuth();
     const [formData, setFormData] = useState({
-        name: '',
-        email: '',
-        password: '',
-        password2: '',
+        name: "",
+        email: "",
+        password: "",
+        password2: "",
     });
 
-    const handleClick = () => {
-        setNewUser(false);
-    };
+    const [errors, setErrors] = useState([]);
+
 
     function handleChange(e) {
         setFormData({
@@ -27,54 +29,98 @@ const SignUp = ({ setNewUser }) => {
         e.preventDefault();
 
         if (formData.password !== formData.password2) {
-            console.log('Passwords do not match');
-        } else {
-            await signUp(formData);
-            nav('/dashboard')
+            return setErrors([{ msg: "Passwords do not match" }]);
+
         }
-    }
+
+        try {
+            setErrors([]); //clean errors from previous 
+            await signUp(formData);
+
+            console.log("Form submitted:", formData);
+            // Reset form after submission
+            setFormData({
+                name: "",
+                email: "",
+                password: "",
+                password2: "",
+            });
+            nav("/dashboard");
+        } catch (err) {
+            console.log(err);
+            const apiErrors = err.response.data.errors;
+            // axios.isAxiosError(err) && err.response?.data?.errors?.length
+            //   ? err.response.data.errors.msg        // [{ msg, … }]
+            //   : [{ msg: "Something went wrong. Please try again." }];
+
+            setErrors(apiErrors);
+            setTimeout(() => setErrors([]), 3000);
+        }
+    };
+
+    const handleClick = () => {
+        setNewUser(false);
+    };
+
 
     return (
-        <div className='forms'>
+        <div className="forms">
             <h2>SignUp</h2>
-            <form onSubmit={handleSubmit} autoComplete='off'>
-                <label htmlFor='name1'>Name: </label>
+            <form autoComplete="off" onSubmit={handleSubmit}>
+                <label htmlFor="name1">Name: </label>
                 <input
                     onChange={handleChange}
-                    type='text'
-                    id='name1'
-                    name='name'
-                    placeholder='First and Last Name'
+                    type="text"
+                    id="name1"
+                    name="name"
+                    placeholder="First and Last Name"
                 />
-                <label htmlFor='email1'>Email: </label>
+                <label htmlFor="email1">Email: </label>
                 <input
                     onChange={handleChange}
-                    type='email'
-                    id='email1'
-                    name='email'
-                    placeholder='Email'
+                    type="email"
+                    id="email1"
+                    name="email"
+                    placeholder="Email"
                 />
-                <label htmlFor='password1'>Password: </label>
+                <label htmlFor="password1">Password: </label>
                 <input
                     onChange={handleChange}
-                    type='password'
-                    id='password1'
-                    name='password'
-                    placeholder='Password'
-                    minLength='6'
+                    type="password"
+                    id="password1"
+                    name="password"
+                    placeholder="Password"
+                    minLength="6"
                 />
+                <label htmlFor="password2">Confirm password: </label>
                 <input
                     onChange={handleChange}
-                    type='password'
-                    id='password2'
-                    name='password2'
-                    placeholder='Confirm Password'
-                    minLength='6'
+                    type="password"
+                    id="password2"
+                    name="password2"
+                    placeholder="Confirm Password"
+                    minLength="6"
                 />
-                <button type='submit'>Sign In</button>
+                <button type="submit">
+                    Submit
+                </button>
+                <p>Minimum password requirements:</p>
+                <ul>
+                    <li>10 characters long</li>
+                    <li>1 upper-case letter</li>
+                    <li>1 lower-case letter</li>
+                    <li>1 number</li>
+                    <li>1 special character</li>
+                </ul>
+
+                {/* errrors block for display */}
+                {errors.length > 0 ? errors.map((e, index) => (
+                    <p key={index} className="text-red"> {e.msg} </p>)) : null
+                }
+
             </form>
             <p>
-                Already have an account? <button onClick={handleClick}>Sign In</button>
+                Already have an account? <button onClick={handleClick}>Log In</button>
             </p>
         </div>
     );

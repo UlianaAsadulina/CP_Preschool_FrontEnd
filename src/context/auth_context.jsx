@@ -53,6 +53,7 @@ export default function AuthProvider({ children }) {
 }
 
 // Cheeky function to minimize imports on others components
+
 export function useAuth() {
     return useContext(AuthContext);
 }
