@@ -45,7 +45,7 @@ const SignUp = ({ setNewUser }) => {
                 password: "",
                 password2: "",
             });
-            nav("/dashboard");
+            nav("/admin");
         } catch (err) {
             console.log(err);
             const apiErrors = err.response.data.errors;

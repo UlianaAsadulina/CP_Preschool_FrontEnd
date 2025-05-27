@@ -24,7 +24,7 @@ const LoginForm = ({ setNewUser }) => {
 
         try {
             await login(formData);
-            nav('/dashboard');
+            nav('/admin');
             console.log('Success');
 
         } catch (err) {

@@ -26,10 +26,9 @@ export default function App() {
         <Route path='/contacts' element={<ContactsPage />} />
         <Route path='/auth' element={<AuthPage />} />
         <Route element={<ProtectedRoutes />}>
-          <Route path='/dashboard' element={<Dashboard />} />
-        </Route>
-        <Route path='/admin' element={<AdminPage />} />
-        <Route path='/admin/update/:id' element={<EditGroupPage />} />
+          <Route path='/admin' element={<AdminPage />} />
+          <Route path='/admin/update/:id' element={<EditGroupPage />} />
+        </Route>       
         <Route path='*' element={ <h1>404: Page Not Found</h1> } />
       </Routes>
     </>
