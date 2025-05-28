@@ -20,7 +20,7 @@ export default function EditGroupPage() {
         });
 
     async function getData() {
-        const result = await axios.get(`https://localhost3000/groups/${id}`);
+        const result = await axios.get(`http://localhost:3000/groups/${id}`);
         // console.log(result.data);
         // destructure result
         const { teachers, kids, ...restData } = result.data[0];

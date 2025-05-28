@@ -31,7 +31,7 @@ export default function Group({ group, setCurrent }) {
 
     async function handleDelete() {
         // console.log("TRY to Delete " + group._id);
-        const result = await axios.delete(`https://localhost3000/groups/${group._id}`);
+        const result = await axios.delete(`http://localhost:3000/groups/${group._id}`);
         // console.log(result.data);
         setCurrent(result.data);
 

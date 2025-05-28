@@ -49,10 +49,6 @@ const SignUp = ({ setNewUser }) => {
         } catch (err) {
             console.log(err);
             const apiErrors = err.response.data.errors;
-            // axios.isAxiosError(err) && err.response?.data?.errors?.length
-            //   ? err.response.data.errors.msg        // [{ msg, … }]
-            //   : [{ msg: "Something went wrong. Please try again." }];
-
             setErrors(apiErrors);
             setTimeout(() => setErrors([]), 3000);
         }
