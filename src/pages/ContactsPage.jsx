@@ -20,7 +20,7 @@ export default function ContactsPage() {
                         </div>
                         <div style={{ paddingLeft: "15px"}}>
                             <p>07:00 am - 06:00 pm</p>
-                            <p>07:00 am - 06:00 pm</p>
+                            <p>07:00 am - 05:30 pm</p>
                         </div>
                     </div>
             </div>

@@ -4,13 +4,16 @@ import { BrowserRouter } from 'react-router-dom'
 import './index.css';
 import App from './App.jsx';
 import AppProvider from './context/app_context.jsx'
+import { CookiesProvider } from 'react-cookie';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <AppProvider>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </AppProvider>    
+    <CookiesProvider>
+      <AppProvider>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </AppProvider>  
+    </CookiesProvider>      
   </StrictMode>,
 )

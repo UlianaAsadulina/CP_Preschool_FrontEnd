@@ -1,59 +1,84 @@
-import { createContext, useContext, useMemo } from 'react';
-import { useCookies } from 'react-cookie';
-import axios from 'axios';
+import { createContext, useContext, useMemo } from "react";
+import { useCookies } from "react-cookie";
 
-const AuthContext = createContext();
+import axios from "axios";
+
+const AuthContext = createContext(null);
 
 export default function AuthProvider({ children }) {
-    const [cookies, setCookie, removeCookie] = useCookies();
+    const [cookies, setCookie, removeCookie] = useCookies(['token']);
+    // const navigate = useNavigate();
 
-    const login = async (formData) => {
-        let res = await axios({
-            method: 'POST',
-            url: 'https://localhost3000/auth',
-            // url: 'https://jwtbackendcomplete-1.onrender.com/api/auth',
-            data: formData,
-        });
-
-        setCookie('token', res.data.token);
-    };
-
-    const signUp = async (formData) => {
+    // Function to handle login
+    const login = async (formdata) => {
         try {
+            console.log("From form:", formdata);
             let res = await axios({
                 method: 'POST',
-                url: 'https://localhost3000/users',
-                // url: 'https://jwtbackendcomplete-1.onrender.com/api/users',
-                data: formData,
+                url: 'http://localhost:3000/auth',
+                data: formdata,
             });
 
+            console.log("Response: ", res.data);
+            //Take token from response and set to cookies
             setCookie('token', res.data.token);
+            // console.log(cookies.token);
+            // navigate('/dashboard');
         } catch (err) {
             console.error(err);
+            throw (err);
+            //     let newArr = err.response.data.errors.map((e) => {return <p>{e.msg}</p>;});
+            //     console.log(newArr);
+            //     window.alert(newArr);
         }
     };
 
-    const logout = () => {
-        ['token'].forEach((cookie) => {
-            removeCookie(cookie);
-        });
+    //Register function
+    async function signUp(formdata) {
+        try {
+            console.log(formdata)
+            let res = await axios.post('http://localhost:3000/users', formdata);
+
+            setCookie('token', res.data.token);
+
+        } catch (error) {
+            console.error(error);
+
+            // const err = new Error("Request failed");
+            // err.response = { data: body }; // { errors: [...] }
+            throw error;
+
+            // let newArr = error.response.data.errors.map((e) => {
+            //     return <p>{e.msg}</p>;
+            // });
+            // console.error(newArr);
+            // window.alert(newArr);
+        }
     };
 
-    const value = useMemo(
-        () => ({
-            cookies,
-            login,
-            logout,
-            signUp,
-        }),
-        [cookies]
-    );
+    // Function to handle logout
+    const logout = () => {
+        ['token'].forEach((obj) => removeCookie(obj));
 
-    return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+    };
+
+
+
+    const value = useMemo(() => ({
+        cookies,
+        login,
+        logout,
+        signUp
+    }), [cookies]);
+
+    return (
+        <AuthContext.Provider value={value}>
+            {children}
+        </AuthContext.Provider>
+        );
 }
 
-// Cheeky function to minimize imports on others components
-
+// Custom hook to use the AuthContext and do not import it every time
 export function useAuth() {
     return useContext(AuthContext);
 }

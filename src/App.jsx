@@ -9,8 +9,7 @@ import './App.css';
 import NavBar from './components/NavBar';
 import TuitionPage from './pages/TuitionPage';
 import AuthPage from './pages/AuthPage';
-import Dashboard from './pages/Dashboard';
-import ProtectedRoutes from './components/ProtectedRoutes/ProtectedRoutes';
+import ProtectedRoutes from './pages/ProtectedRoutes/ProtectedRoutes';
 
 
 export default function App() { 
