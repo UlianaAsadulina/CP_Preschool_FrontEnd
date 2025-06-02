@@ -26,6 +26,9 @@ export default function NavBar() {
                     <Link to="/contacts">Contact</Link>
                 </li>
                 <li onClick={() => setMenuOpen(false)}>
+                    <Link to="/resourses">Community resourses</Link>
+                </li>
+                <li onClick={() => setMenuOpen(false)}>
                     <Link to="/admin">Administrator Page</Link>
                 </li> 
                 <li onClick={() => setMenuOpen(false)}>

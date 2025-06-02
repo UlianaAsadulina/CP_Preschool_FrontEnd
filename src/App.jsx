@@ -10,6 +10,7 @@ import NavBar from './components/NavBar';
 import TuitionPage from './pages/TuitionPage';
 import AuthPage from './pages/AuthPage';
 import ProtectedRoutes from './pages/ProtectedRoutes/ProtectedRoutes';
+import ResoursePage from './pages/ResoursesPage';
 
 
 export default function App() { 
@@ -23,6 +24,7 @@ export default function App() {
         <Route path='/schedule' element={<SchedulePage />} />
         <Route path='/tuition' element={<TuitionPage />} />
         <Route path='/contacts' element={<ContactsPage />} />
+        <Route path='/resourses' element={<ResoursePage />} />
         <Route path='/auth' element={<AuthPage />} />
         <Route element={<ProtectedRoutes />}>
           <Route path='/admin' element={<AdminPage />} />

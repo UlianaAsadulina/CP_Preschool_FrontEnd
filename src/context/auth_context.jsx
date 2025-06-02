@@ -15,7 +15,7 @@ export default function AuthProvider({ children }) {
             console.log("From form:", formdata);
             let res = await axios({
                 method: 'POST',
-                url: 'http://localhost:3000/auth',
+                url: 'https://thepreschool.onrender.com/auth',
                 data: formdata,
             });
 
@@ -37,7 +37,7 @@ export default function AuthProvider({ children }) {
     async function signUp(formdata) {
         try {
             console.log(formdata)
-            let res = await axios.post('http://localhost:3000/users', formdata);
+            let res = await axios.post('https://thepreschool.onrender.com/users', formdata);
 
             setCookie('token', res.data.token);
 

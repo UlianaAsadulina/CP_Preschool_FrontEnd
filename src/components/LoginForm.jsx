@@ -48,7 +48,7 @@ const LoginForm = ({ setNewUser }) => {
         <div className='forms'>
             <h2>Login</h2>
             <form autoComplete='off' onSubmit={handleSubmit}>
-                <label htmlFor='email'>Email: </label>
+                {/* <label htmlFor='email'>Email: </label> */}
                 <input
                     type='email'
                     id='email'
@@ -56,7 +56,8 @@ const LoginForm = ({ setNewUser }) => {
                     placeholder='Email'
                     onChange={handleChange}
                 />
-                <label htmlFor='password'>Password: </label>
+                <br />
+                {/* <label htmlFor='password'>Password: </label> */}
                 <input
                     type='password'
                     id='password'
@@ -65,12 +66,13 @@ const LoginForm = ({ setNewUser }) => {
                     onChange={handleChange}
                     minLength='6'
                 />
+                <br />
                 <button type='submit'>Log In</button>
                 {errors.length > 0 ? errors.map((e, index) => (
                     <p key={index} className="redtext"> {e.msg} </p>)) : null}
             </form>
             <p>
-                Dont have an account? <button onClick={handleClick}>Sign Up</button>
+                Don't have an account? <button onClick={handleClick}>Sign Up</button>
             </p>
         </div>
     );

@@ -15,7 +15,7 @@ export default function AddGroupForm({ setShowForm }) {
     async function handleSubmit(e) {
         e.preventDefault();
         try {
-            let result = await axios.post('http://localhost:3000/groups', formData);
+            let result = await axios.post('https://thepreschool.onrender.com/groups', formData);
             setShowForm(false); // Hide the form after submission
         } catch (err) {            
             console.error(err);

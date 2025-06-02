@@ -14,7 +14,7 @@ export default function EditTeacherForm({group_id, teacher, setShowEditForm, set
         console.log("Changed:");
         console.log(formData);
         //router.patch('/:id/teachers/:teacherId'
-        const result = await axios.patch(`http://localhost:3000/groups/${group_id}/teachers/${formData._id}`, formData);
+        const result = await axios.patch(`https://thepreschool.onrender.com/groups/${group_id}/teachers/${formData._id}`, formData);
         console.log("From database");
         console.log(result.data);
         setCurrent(result.data);              

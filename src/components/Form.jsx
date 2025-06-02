@@ -15,19 +15,19 @@ function Form() {
     }
 
     async function getData() {
-        const result = await axios.get('http://localhost:3000/groups');
+        const result = await axios.get('https://thepreschool.onrender.com/groups');
         // console.log(result.data);             
-        setGroups(result.data);                
+        setGroups(result.data);
     };
 
-    useEffect(() => {       
-        try {            
+    useEffect(() => {
+        try {
             getData();
             //console.log(groups);
             // console.log("length"+groups.length);
         } catch (err) {
             console.error(err)
-        }        
+        }
     }, [current]);
 
 
@@ -37,13 +37,13 @@ function Form() {
     return (
         <>
             <button className="button" onClick={addHandle}>Add New Group</button>
-             {/* Show the form above all when "Add new" is clicked */}
-             {showForm && (<AddGroupForm setShowForm={setShowForm} />)}
-           
-            { groups.map((group, index) => {
-                return <Group key={index} group={group} setCurrent={setCurrent}/>
-                })} 
-            
+            {/* Show the form above all when "Add new" is clicked */}
+            {showForm && (<AddGroupForm setShowForm={setShowForm} />)}
+
+            {groups.map((group, index) => {
+                return <Group key={index} group={group} setCurrent={setCurrent} />
+            })}
+
 
         </>
 
