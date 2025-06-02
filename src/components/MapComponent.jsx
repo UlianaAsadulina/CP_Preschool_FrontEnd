@@ -17,18 +17,24 @@ const [open, setOpen] = useState(false)
     const apiKey = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
     const mapID = import.meta.env.VITE_MAP_ID;
 
-    return  (
-    <APIProvider apiKey={apiKey} >      
-            
-        
-            <Map defaultZoom={12} 
-                defaultCenter={position} 
-                mapId={mapID}>
-                <AdvancedMarker key="The Preschool" position={position} onClick={() => setOpen(true)}>                    <Pin background={'#FBBC04'} glyphColor={'#000'} borderColor={'#000'} />
-                </AdvancedMarker>
+     // Custom logo as marker icon
+    const logoIcon = {
+        url: "https://img.icons8.com/office/40/pyramid-toy--v1.png",
+        scaledSize: { width: 40, height: 40 }, 
+    };
+
+    const handleMarkerClick = () => {
+        const googleMapsUrl = `https://www.google.com/maps?q=${position.lat},${position.lng}`;
+        window.open(googleMapsUrl, "_blank");
+    };
+
+    return (
+        <APIProvider apiKey={apiKey}>
+            <Map defaultZoom={12} defaultCenter={position} mapId={mapID}>              
+          
+                <AdvancedMarker key="The Preschool" position={position} onClick={handleMarkerClick} icon={logoIcon} />
             </Map>
             
-    
-    </APIProvider>
+        </APIProvider>
     );
 }
