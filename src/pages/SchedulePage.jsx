@@ -34,9 +34,9 @@ export default function SchedulePage() {
             <p>If we have an opening that fits your families needs please call the center or set up a tour. After a tour, spots can be held with a registration fee of $50 for up to two weeks.</p>
             <p>
                 Enrolment documents: 
-                <a href="/public/documents/EnrollmentForm.pdf" target="_blank"> enrollment form</a>  
+                <a href="/documents/EnrollmentForm.pdf" target="_blank"> enrollment form</a>  
                 & 
-                <a href="/public/documents/MedicalForm.pdf" target="_blank"> medical form</a>
+                <a href="/documents/MedicalForm.pdf" target="_blank"> medical form</a>
             </p>
         </div>
         
